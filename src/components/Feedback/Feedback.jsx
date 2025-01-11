@@ -1,4 +1,5 @@
 import style from "./Feedback.module.css";
+import PropTypes from "prop-types";
 
 export default function Feedback({
   typeFeedback,
@@ -15,3 +16,11 @@ export default function Feedback({
     </ul>
   );
 }
+
+Feedback.propTypes = {
+  typeFeedback: PropTypes.string.isRequired,
+  totalFeedback: PropTypes.string.isRequired,
+  positiveFeedback: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  stats: PropTypes.string.isRequired,
+};

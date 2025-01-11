@@ -1,9 +1,8 @@
-import { useState } from "react";
 import styles from "./Options.module.css";
+import PropTypes from "prop-types";
 
 export default function Options({
   totalFeedback,
-  typeFeedback,
   updateFeedback,
   resetFeedback,
 }) {
@@ -41,3 +40,9 @@ export default function Options({
     </div>
   );
 }
+
+Options.propTypes = {
+  totalFeedback: PropTypes.number.isRequired,
+  updateFeedback: PropTypes.func.isRequired,
+  resetFeedback: PropTypes.func.isRequired,
+};
