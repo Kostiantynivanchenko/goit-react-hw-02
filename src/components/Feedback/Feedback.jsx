@@ -18,9 +18,11 @@ export default function Feedback({
 }
 
 Feedback.propTypes = {
-  typeFeedback: PropTypes.string.isRequired,
-  totalFeedback: PropTypes.string.isRequired,
-  positiveFeedback: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  stats: PropTypes.string.isRequired,
+  typeFeedback: PropTypes.shape({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }).isRequired,
+  totalFeedback: PropTypes.number.isRequired,
+  positiveFeedback: PropTypes.number.isRequired,
 };
