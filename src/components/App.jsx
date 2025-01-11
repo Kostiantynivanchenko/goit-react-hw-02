@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
-import reactLogo from "../assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.module.css";
 import Description from "./Description.jsx";
 import Options from "../components/Options.jsx";
 import Feedback from "./Feedback.jsx";
 import Notification from "./Notification.jsx";
-import js from "@eslint/js";
 
 function App() {
   const [typeFeedback, setTypeFeedback] = useState(() => {
@@ -25,9 +22,10 @@ function App() {
   // const positiveFeedback = (totalFeedback > 0
   // ? Math.round((typeFeedback.good / totalFeedback) * 100)
   // : 0);
-  const positiveFeedback = Math.round(
-    (typeFeedback.good / totalFeedback) * 100
-  );
+  const positiveFeedback =
+    totalFeedback > 0
+      ? Math.round((typeFeedback.good / totalFeedback) * 100)
+      : 0;
 
   useEffect(() => {
     localStorage.setItem("typeFeedback", JSON.stringify(typeFeedback));
